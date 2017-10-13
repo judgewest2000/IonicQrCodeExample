@@ -1,14 +1,18 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Ionic Blank
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+    <ion-card>
+        <ion-card-content>
+            <ion-input [(ngModel)]="code" type="text" placeholder="Enter code here"></ion-input>
+            <button ion-button block (click)="process();">Process</button>
+
+            <img *ngIf="displayQrCode()" [src]="generated" />
+        </ion-card-content>
+    </ion-card>
 </ion-content>
